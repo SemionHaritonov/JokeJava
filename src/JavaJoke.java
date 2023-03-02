@@ -5,7 +5,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JavaJoke {
-    public static void joke(Path pathSource, Path pathTarget) throws IOException {
+
+    private final Path pathSource;
+    private final Path pathTarget;
+
+
+    public JavaJoke(Path pathSource, Path pathTarget) {
+        this.pathSource = pathSource;
+        this.pathTarget = pathTarget;
+    }
+    public void joke() throws IOException {
         ArrayList<File> fileArrayList = new ArrayList<>();
         searchFolders(pathTarget, fileArrayList);
         for (File file:
